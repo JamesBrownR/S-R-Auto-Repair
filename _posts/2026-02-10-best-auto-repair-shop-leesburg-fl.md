@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "What to Look For in an Auto Repair Shop in Leesburg, FL"
-date: 2025-02-10
+date: 2026-02-10
 description: "Not all mechanics are created equal. Here's what separates a trustworthy auto repair shop from one that will take advantage of you — and how S&R stacks up."
 ---
 
