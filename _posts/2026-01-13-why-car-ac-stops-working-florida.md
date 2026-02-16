@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Why Your Car A/C Stops Working in Florida (And What To Do)"
-date: 2025-01-13
+date: 2026-01-13
 description: "Florida heat is brutal. Here's why car A/C systems fail, what the warning signs are, and how to get cold air back fast."
 ---
 
