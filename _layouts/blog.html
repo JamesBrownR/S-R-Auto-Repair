@@ -1,1 +1,48 @@
+---
+layout: default
+---
 
+<section class="hero" style="padding: 40px 20px;">
+    <div class="container">
+        <p style="font-size: 0.85rem; color: #888; margin-bottom: 10px;">
+            <a href="{{ site.baseurl }}/" style="color: inherit;">Home</a> &rsaquo;
+            <a href="{{ site.baseurl }}/blog/" style="color: inherit;">Blog</a> &rsaquo;
+            {{ page.title }}
+        </p>
+        <h1 style="color: var(--primary-red);">{{ page.title }}</h1>
+        <p style="color: var(--accent-brown);">{{ page.date | date: "%B %-d, %Y" }}</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div style="display: flex; flex-wrap: wrap; gap: 50px;">
+            <div style="flex: 2; min-width: 280px; line-height: 1.9; color: #444;">
+                {{ content }}
+            </div>
+            <div style="flex: 1; min-width: 260px;">
+                <div style="background: var(--accent-brown); color: white; padding: 25px; border-radius: 8px; text-align: center; position: sticky; top: 100px;">
+                    <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">Need a mechanic?</p>
+                    <a href="tel:+19176697077" style="color: var(--primary-tan); font-size: 1.3rem; font-weight: bold;">(917) 669-7077</a>
+                    <p style="font-size: 0.85rem; margin-top: 10px; color: #ccc;">Mon–Sat: 9AM – 5PM</p>
+                    <a href="tel:+19176697077" class="btn" style="margin-top: 15px; display: block;">Call Trevor</a>
+                </div>
+                <div style="margin-top: 20px;">
+                    <h4 style="margin-bottom: 15px;">Our Services</h4>
+                    <ul style="line-height: 2.2;">
+                        <li><a href="{{ site.baseurl }}/services/ac-heating/" style="color: var(--primary-red);">A/C & Heating</a></li>
+                        <li><a href="{{ site.baseurl }}/services/brake-repair/" style="color: var(--primary-red);">Brake Repair</a></li>
+                        <li><a href="{{ site.baseurl }}/services/transmission/" style="color: var(--primary-red);">Transmission</a></li>
+                        <li><a href="{{ site.baseurl }}/services/diagnostics/" style="color: var(--primary-red);">Diagnostics</a></li>
+                        <li><a href="{{ site.baseurl }}/services/maintenance/" style="color: var(--primary-red);">General Maintenance</a></li>
+                        <li><a href="{{ site.baseurl }}/services/suspension-steering/" style="color: var(--primary-red);">Suspension & Steering</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px;">
+            <a href="{{ site.baseurl }}/blog/" style="color: var(--primary-red);">← Back to Blog</a>
+        </div>
+    </div>
+</section>
