@@ -5,26 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | S&R Auto Repair</title>
     <meta name="description" content="S&R Auto Repair in Leesburg, FL. 8 Years in business, 5-Star Service. Call Trevor today for reliable mechanical work.">
-    
     {% include styles.html %}
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--primary-tan);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            nav { flex-wrap: wrap; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: var(--accent-brown);
+                padding: 10px 0 20px;
+                margin-top: 10px;
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+            .nav-links.open { display: flex; }
+            .nav-links a {
+                margin: 0;
+                padding: 12px 20px;
+                border-bottom: 1px solid rgba(255,255,255,0.08);
+                font-size: 1rem;
+            }
+            .nav-links a:last-child {
+                margin: 15px 20px 0;
+                border-bottom: none;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-
     <header>
         <div class="container">
             <nav>
-                <a href="/" class="logo">S&R AUTO REPAIR</a>
-                <div class="nav-links">
+                <a href="{{ site.baseurl }}/" class="logo">S&R AUTO REPAIR</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links" id="nav-links">
                     <a href="{{ site.baseurl }}/">Home</a>
-                      <a href="{{ site.baseurl }}/services">Services</a>
-                    <a href="{{ site.baseurl }}/areas">Service Areas</a>
-                    <a href="{{ site.baseurl }}/reviews">Reviews</a>
-                    <a href="{{ site.baseurl }}/blog">Blogs</a>
-                  
+                    <a href="{{ site.baseurl }}/services/">Services</a>
+                    <a href="{{ site.baseurl }}/areas/">Service Areas</a>
+                    <a href="{{ site.baseurl }}/reviews/">Reviews</a>
+                    <a href="{{ site.baseurl }}/blog/">Blog</a>
                     <a href="{{ site.baseurl }}/contact/">Contact</a>
-                    <a href="tel:+19176697077" style="color: #fff; background: #A63429; padding: 5px 10px; border-radius: 4px;">
+                    <a href="tel:+19176697077" style="color:#fff;background:#A63429;padding:8px 15px;border-radius:4px;">
                         <i class="fas fa-phone"></i> Call Trevor
                     </a>
                 </div>
@@ -44,5 +91,21 @@
         </div>
     </footer>
 
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            hamburger.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', false);
+            });
+        });
+    </script>
 </body>
 </html>
