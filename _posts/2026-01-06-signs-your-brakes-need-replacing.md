@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "How to Know When Your Brakes Need Replacing"
-date: 2025-01-06
+date: 2026-01-06
 description: "Squeaking, grinding, or a soft pedal? Here's how to tell when your brakes actually need attention — and what happens if you ignore it."
 ---
 
