@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: "How Much Does Transmission Repair Cost? (Honest Breakdown)"
+title: "How Much Does Transmission Repair Cost?"
 date: 2026-02-03
 description: "Transmission repair costs vary widely depending on what's actually wrong. Here's an honest breakdown of what to expect and how to avoid getting overcharged."
 ---
