@@ -1,1 +1,39 @@
+---
+layout: default
+title: Auto Repair Blog
+---
 
+<section class="hero" style="padding: 60px 20px;">
+    <div class="container">
+        <h1 style="color: var(--primary-red);">Auto Repair Tips & Advice</h1>
+        <p>Straight talk about keeping your vehicle running right.</p>
+        <a href="tel:+19176697077" class="btn">Call Trevor Now</a>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        {% if site.posts.size > 0 %}
+        <div class="services-grid">
+            {% for post in site.posts %}
+            <a href="{{ post.url | prepend: site.baseurl }}" style="text-decoration: none; color: inherit;">
+                <div class="service-card" style="text-align: left;">
+                    <p style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+                        {{ post.date | date: "%B %-d, %Y" }}
+                    </p>
+                    <h3 style="margin-bottom: 15px;">{{ post.title }}</h3>
+                    <p style="color: #666;">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+                    <p style="color: var(--primary-red); margin-top: 15px; font-weight: bold; font-size: 0.9rem;">Read More →</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div style="text-align: center; padding: 60px 20px; color: #666;">
+            <i class="fas fa-wrench" style="font-size: 3rem; color: var(--primary-red); margin-bottom: 20px; display: block;"></i>
+            <h3 style="margin-bottom: 15px;">Posts Coming Soon</h3>
+            <p>Trevor's been busy in the shop — check back soon for tips on keeping your vehicle running right.</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
