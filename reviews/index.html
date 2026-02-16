@@ -23,7 +23,23 @@ title: Customer Reviews
             <a href="https://www.google.com/maps/place/S%26R+Auto+Repair+LLC/@28.8038734,-82.1936339,11z" target="_blank" style="color: var(--primary-red); text-decoration: underline; font-size: 0.9rem;">View on Google Maps</a>
         </div>
 
-       
+        <div class="review-grid">
+            {% for review in site.data.reviews %}
+            {% if review.text != "" %}
+            <div class="review-card">
+                <div class="stars">
+                    {% for i in (1..review.stars) %}
+                    <i class="fas fa-star"></i>
+                    {% endfor %}
+                </div>
+                <span class="review-text">"{{ review.text }}"</span>
+                <div class="review-author">
+                    <span>— {{ review.name }}</span>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
 
         <div style="text-align: center; margin-top: 60px; background: var(--primary-tan); padding: 40px; border-radius: 8px;">
             <h3 style="margin-bottom: 15px;">Had a Great Experience?</h3>
