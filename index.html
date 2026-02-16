@@ -1,0 +1,104 @@
+---
+layout: default
+title: Home
+---
+
+<section class="hero">
+    <div class="container">
+        <h1>S&R Auto Repair</h1>
+        <p>Reliable. Honest. Experienced.</p>
+        <p style="font-size: 1rem; color: #555;">Serving Leesburg, FL for over 8 Years</p>
+        <br>
+        <a href="tel:+19176697077" class="btn">Call for Appointment</a>
+        <a href="#contact" class="btn" style="background:transparent; color:var(--accent-brown); border-color:var(--accent-brown);">Get Directions</a>
+    </div>
+</section>
+
+<div class="stats-bar">
+    <div class="stat-item">
+        <span class="stat-number">5.0 <i class="fas fa-star" style="font-size:1.5rem;"></i></span>
+        <span>Google Rating</span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-number">41+</span>
+        <span>Happy Reviews</span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-number">8</span>
+        <span>Years in Business</span>
+    </div>
+</div>
+
+<section id="reviews" class="section">
+    <div class="container">
+        <h2 class="section-title">What Our Customers Say</h2>
+        
+        <div class="reviews-grid">
+            {% for review in page.reviews %}
+            <div class="review-card">
+                <div class="stars">
+                    {% for i in (1..review.stars) %}
+                        <i class="fas fa-star"></i>
+                    {% endfor %}
+                </div>
+                <p>"{{ review.text }}"</p>
+                <span class="review-author">- {{ review.name }}</span>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="https://www.google.com/maps/place/S%26R+Auto+Repair/@28.8117,-81.8764,17z" target="_blank" style="text-decoration: underline; color: var(--primary-red);">Read all 41 reviews on Google</a>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section" style="background-color: #e9e5d9;">
+    <div class="container">
+        <h2 class="section-title">Visit the Shop</h2>
+        
+        <div class="contact-wrapper">
+            
+            <div class="contact-info">
+                <h3>S&R Auto Repair LLC</h3>
+                <p><strong>Owner:</strong> Trevor</p>
+                <p>720 Hood Ave, Leesburg, FL 34748</p>
+                <br>
+                <a href="tel:+19176697077" class="btn"><i class="fas fa-phone"></i> (917) 669-7077</a>
+                
+                <h4 style="margin-top: 30px;">Business Hours</h4>
+                <table class="hours-table">
+                    <tr><td>Monday</td><td>9:00 AM – 5:00 PM</td></tr>
+                    <tr><td>Tuesday</td><td>9:00 AM – 5:00 PM</td></tr>
+                    <tr><td>Wednesday</td><td>9:00 AM – 5:00 PM</td></tr>
+                    <tr><td>Thursday</td><td>9:00 AM – 5:00 PM</td></tr>
+                    <tr><td>Friday</td><td>9:00 AM – 5:00 PM</td></tr>
+                    <tr><td>Saturday</td><td>9:00 AM – 5:00 PM</td></tr>
+                    <tr><td>Sunday</td><td style="color: var(--primary-red);">Closed</td></tr>
+                </table>
+            </div>
+
+            <div class="contact-form-container">
+                <h3>Send a Message</h3>
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Phone or Email" required>
+                    <textarea name="message" rows="5" placeholder="How can we help? (e.g. Brake check, Oil change, Engine noise)" required></textarea>
+                    <button type="submit" class="btn" style="width:100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div style="margin-top: 50px;">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3494.757041774378!2d-81.8785986847952!3d28.81156698234661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e7737116790001%3A0x1a01c34887304193!2s720%20Hood%20Ave%2C%20Leesburg%2C%20FL%2034748!5e0!3m2!1sen!2sus!4v1676906234000!5m2!1sen!2sus" 
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
