@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "How Often Should You Really Change Your Oil?"
-date: 2025-02-24
+date: 2026-02-24
 description: "The old 3,000-mile rule is outdated. Here's what modern engines actually need — and why following the wrong schedule costs you money either way."
 ---
 
