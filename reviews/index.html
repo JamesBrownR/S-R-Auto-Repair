@@ -1,1 +1,55 @@
+---
+layout: default
+title: Customer Reviews
+---
 
+<section class="hero" style="padding: 60px 20px;">
+    <div class="container">
+        <h1 style="color: var(--primary-red);">Customer Reviews</h1>
+        <p>Don't take our word for it — here's what your neighbors are saying.</p>
+        <a href="tel:+19176697077" class="btn">Call Trevor Now</a>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <div style="text-align: center; margin-bottom: 50px;">
+            <span style="font-size: 3rem; font-weight: bold; color: var(--accent-brown);">4.7</span>
+            <div style="color: #f1c40f; font-size: 1.5rem; margin: 5px 0;">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+            <p style="color: #666;">Based on 41+ Google Reviews</p>
+            <a href="https://www.google.com/maps/place/S%26R+Auto+Repair+LLC/@28.8038734,-82.1936339,11z" target="_blank" style="color: var(--primary-red); text-decoration: underline; font-size: 0.9rem;">View on Google Maps</a>
+        </div>
+
+        <div class="review-grid">
+            {% for review in site.data.reviews %}
+            {% if review.text != "" %}
+            <div class="review-card">
+                <div class="stars">
+                    {% for i in (1..review.stars) %}
+                    <i class="fas fa-star"></i>
+                    {% endfor %}
+                    {% assign empty = 5 | minus: review.stars %}
+                    {% for i in (1..empty) %}
+                    <i class="far fa-star" style="color: #ddd;"></i>
+                    {% endfor %}
+                </div>
+                <span class="review-text">"{{ review.text }}"</span>
+                <div class="review-author">
+                    <span>— {{ review.name }}</span>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div style="text-align: center; margin-top: 60px; background: var(--primary-tan); padding: 40px; border-radius: 8px;">
+            <h3 style="margin-bottom: 15px;">Had a Great Experience?</h3>
+            <p style="color: #555; margin-bottom: 20px;">Reviews help other local drivers find honest mechanics. We'd really appreciate it.</p>
+            <a href="https://www.google.com/maps/place/S%26R+Auto+Repair+LLC/@28.8038734,-82.1936339,11z" target="_blank" class="btn">Leave a Google Review</a>
+        </div>
+
+    </div>
+</section>
