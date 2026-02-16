@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | S&R Auto Repair</title>
+    <meta name="description" content="S&R Auto Repair in Leesburg, FL. 8 Years in business, 5-Star Service. Call Trevor today for reliable mechanical work.">
+    
+    {% include styles.html %}
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/" class="logo">S&R AUTO REPAIR</a>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="#reviews">Reviews</a>
+                    <a href="#contact">Contact</a>
+                    <a href="tel:+19176697077" style="color: #fff; background: #A63429; padding: 5px 10px; border-radius: 4px;">
+                        <i class="fas fa-phone"></i> Call Trevor
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    {{ content }}
+
+    <footer>
+        <div class="container">
+            <p><strong>S&R Auto Repair LLC</strong></p>
+            <p>720 Hood Ave, Leesburg, FL 34748</p>
+            <p>Phone: <a href="tel:+19176697077" style="color:inherit;">+1 917-669-7077</a></p>
+            <br>
+            <p>&copy; {{ site.time | date: '%Y' }} S&R Auto Repair. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
