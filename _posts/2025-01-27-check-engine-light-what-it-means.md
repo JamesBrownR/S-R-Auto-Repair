@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Check Engine Light On? Here's What It Actually Means"
-date: 2025-01-20
+date: 2026-01-20
 description: "The check engine light is one of the most misunderstood warning lights in your car. Here's what it can mean, what to do, and what not to panic about."
 ---
 
